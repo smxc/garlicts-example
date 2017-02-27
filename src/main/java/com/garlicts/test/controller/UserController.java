@@ -3,8 +3,13 @@ package com.garlicts.test.controller;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Map.Entry;
+import java.util.Set;
+
+import javax.servlet.http.HttpServletRequest;
 
 import com.garlicts.ioc.annotation.Autowired;
+import com.garlicts.mvc.GarlictsContext;
 import com.garlicts.mvc.annotation.Controller;
 import com.garlicts.mvc.annotation.RequestMapping;
 import com.garlicts.mvc.bean.JsonView;
@@ -12,6 +17,7 @@ import com.garlicts.mvc.bean.JspView;
 //import com.garlicts.plugin.distributed.redis.RedisTemplate;
 import com.garlicts.test.entity.User;
 import com.garlicts.test.service.UserService;
+import com.garlicts.util.WebUtil;
 
 @Controller
 public class UserController {
@@ -75,5 +81,17 @@ public class UserController {
 //		return jspView;
 //		
 //	}
+	
+	/**
+	 * 获取所有form提交的参数 
+	 */
+	@RequestMapping("/user/submitUser")
+	public JspView submitUser(){
+		JspView jspView = new JspView();
+		Map<String, Object> paramsMap = GarlictsContext.Request.get("params");
+		jspView.setView("1.jsp");
+		jspView.setModel(paramsMap);
+		return jspView;
+	}
 
 }

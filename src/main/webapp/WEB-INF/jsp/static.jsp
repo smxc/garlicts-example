@@ -5,15 +5,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Insert title here</title>
+<link rel=stylesheet href="${pageContext.request.contextPath}/res/1.css"
+	type="text/css">
+
 </head>
-
 <body>
-
-	<form action="${pageContext.request.contextPath}/uploadServlet" method="post" enctype="multipart/form-data">
-		<input type="file" value="" name="file">
-		<input type="submit" value="submit">
-	</form>
-
+	引用静态文件
+	<img alt="" src="${pageContext.request.contextPath}/res/1.png">
+	
+	<p>引用样式</p>
+	
 </body>
-
 </html>

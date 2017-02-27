@@ -7,6 +7,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-1111111111111111111
+<form action="${pageContext.request.contextPath}/user/submitUser.do" method="post" id="">
+	<input type="text" name="username" value=""><br>
+	<input type="text" name="password" value=""><br>
+	
+	<input type="checkbox" name="c" value="a">a 
+	<input type="checkbox" name="c" value="b">b 
+	<input type="checkbox" name="c" value="c">c <br>
+	
+	<input type="submit" value="submit">
+</form>
 </body>
 </html>
