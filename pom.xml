@@ -12,7 +12,7 @@
 		<dependency>
 			<groupId>com.garlicts</groupId>
 			<artifactId>garlicts-core</artifactId>
-			<version>1.0</version>
+			<version>0.0.1</version>
 		</dependency>
 <!-- 		<dependency> -->
 <!-- 			<groupId>com.garlicts.plugin</groupId> -->
@@ -28,6 +28,7 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.11</version>
+			<scope>test</scope>
 		</dependency>
 		<dependency>
 			<groupId>javax.servlet</groupId>

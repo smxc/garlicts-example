@@ -1,11 +1,11 @@
-package com.garlicts.test.controller;
+package com.example.controller;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import com.garlicts.mvc.annotation.Controller;
-import com.garlicts.mvc.annotation.RequestMapping;
-import com.garlicts.mvc.bean.JspView;
+import com.garlicts.framework.mvc.annotation.Controller;
+import com.garlicts.framework.mvc.annotation.RequestMapping;
+import com.garlicts.framework.mvc.bean.JspView;
 
 @Controller
 public class StaticController {

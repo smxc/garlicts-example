@@ -1,18 +1,18 @@
-package com.garlicts.test.aspect;
+package com.example.aspect;
 
 import java.lang.reflect.Method;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.garlicts.aop.AspectProxy;
-import com.garlicts.aop.annotation.Aspect;
+import com.garlicts.framework.aop.AspectProxy;
+import com.garlicts.framework.aop.annotation.Aspect;
 
 /**
  * 自定义一个业务执行耗时切面
  * 	切入 com.garlicts.test.controller目录下的所有类
  */
-@Aspect(packageName="com.garlicts.test.controller")
+@Aspect(packageName="com.example.controller")
 public class RequestTimeAspect extends AspectProxy {
 
 	Logger logger = LoggerFactory.getLogger(RequestTimeAspect.class);

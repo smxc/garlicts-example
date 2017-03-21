@@ -1,3 +1,4 @@
+package com.example.rmi;
 //package com.garlicts.test.rmi;
 //
 //import java.rmi.RemoteException;

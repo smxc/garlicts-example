@@ -1,4 +1,4 @@
-package com.garlicts.test.entity;
+package com.example.entity;
 
 public class User {
 
