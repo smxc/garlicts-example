@@ -4,7 +4,7 @@ import com.example.service.MyService;
 import com.garlicts.framework.InitializeData;
 import com.garlicts.framework.ioc.annotation.Autowired;
 
-public class InitDictData extends InitializeData {
+public class InitDictData implements InitializeData {
 
 	@Autowired
 	MyService myService;
