@@ -4,6 +4,8 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
+import redis.clients.jedis.Jedis;
+
 import com.example.entity.User;
 //import com.example.service.UserService;
 import com.garlicts.framework.ioc.annotation.Autowired;
@@ -12,15 +14,15 @@ import com.garlicts.framework.mvc.annotation.Controller;
 import com.garlicts.framework.mvc.annotation.RequestMapping;
 import com.garlicts.framework.mvc.bean.JsonView;
 import com.garlicts.framework.mvc.bean.JspView;
-import com.garlicts.framework.plugin.cache.redis.RedisTemplate;
+import com.garlicts.framework.plugin.cache.redis.JedisTemplate;
 
 @Controller
 public class UserController {
 
 //	@Autowired
 //	UserService userService;
-	@Autowired
-	RedisTemplate redisTemplate;
+//	@Autowired
+//	RedisTemplate redisTemplate;
 	
 //	@RequestMapping(value="/userList")
 //	public JspView getUserList(){
@@ -59,12 +61,18 @@ public class UserController {
 		JspView jspView = new JspView();
 		Map<String, Object> map = new HashMap<String, Object>();
 		
-		redisTemplate.put("key1", "100");
-		String value = redisTemplate.get("key1");
+//		redisTemplate.put("key1", "100");
+//		String value = redisTemplate.get("key1");
+		
+		Jedis jedis = JedisTemplate.getJedis();
+		jedis.set("key1", "100");
+		String value = jedis.get("key1");
 		map.put("a", value);
 		
 		jspView.setView("redis.jsp");
 		jspView.setModel(map);
+		
+		jedis.close();
 		
 		return jspView;
 		
