@@ -21,12 +21,13 @@ public class RequestTimeAspect extends AspectProxy {
 	ThreadLocal<Long> startTimeThreadLocal = new ThreadLocal<Long>();
 	
 	@Override
-	public void before(Class<?> targetClass, Method targetMethod, Object[] methodParams) {
+	public boolean before(Class<?> targetClass, Method targetMethod, Object[] methodParams) {
 		startTimeThreadLocal.set(System.currentTimeMillis());
+		return true;
 	}
 
 	@Override
-	public void after(Class<?> targetClass, Method targetMethod, Object[] methodParams, Object result) {
+	public boolean after(Class<?> targetClass, Method targetMethod, Object[] methodParams, Object result) {
 		
 		long costTime = System.currentTimeMillis() - startTimeThreadLocal.get();
 		
@@ -41,6 +42,8 @@ public class RequestTimeAspect extends AspectProxy {
 		logger.info(stringBuffer.toString());
 		
 		startTimeThreadLocal.remove();
+		
+		return true;
 		
 	}
 
