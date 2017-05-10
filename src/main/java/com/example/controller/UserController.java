@@ -90,14 +90,5 @@ public class UserController {
 //		jspView.setModel(paramsMap);
 //		return jspView;
 //	}
-	
-	@RequestMapping("/user/submitUser")
-	public JsonView submitUser(User user, Pager pager){
-		
-		JsonView jsonView = new JsonView();
-		System.out.println("user.name: " + user.getName() + " user.mobile: " + user.getMobile());
-		System.out.println("pager.rows: " + pager.getRows() + " pager.page: " + pager.getPage());
-		return jsonView;
-	}
 
 }
