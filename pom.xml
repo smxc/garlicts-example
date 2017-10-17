@@ -8,17 +8,57 @@
 	<name>test Maven Webapp</name>
 	<url>http://maven.apache.org</url>
 
+	<repositories>
+		<repository>
+			<id>apache.maven</id>
+			<name>uk maven</name>
+			<url>http://uk.maven.org/maven2/</url>
+		</repository>
+		<repository>
+			<id>sonatype.maven</id>
+			<name>OSS Sonatype Staging</name>
+			<url>https://oss.sonatype.org/content/groups/staging</url>
+		</repository>
+		<repository>
+			<id>jboss.maven</id>
+			<name>jboss nexus</name>
+			<url>http://repository.jboss.org/nexus/content/repositories/releases</url>
+		</repository>
+		<repository>
+			<id>garlicts.nexus</id>
+			<name>garlicts nexus</name>
+			<url>http://118.244.196.24:8081/nexus/content/groups/public/</url>
+		</repository>
+	</repositories>
+	<pluginRepositories>
+		<pluginRepository>
+			<id>apache.plugin</id>
+			<name>uk maven</name>
+			<url>http://uk.maven.org/maven2/</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>sonatype.plugin</id>
+			<name>OSS Sonatype Staging</name>
+			<url>https://oss.sonatype.org/content/groups/staging</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>jboss.plugin</id>
+			<name>jboss nexus</name>
+			<url>http://repository.jboss.org/nexus/content/repositories/releases</url>
+		</pluginRepository>
+		<pluginRepository>
+			<id>garlicts.nexus</id>
+			<name>garlicts nexus</name>
+			<url>http://118.244.196.24:8081/nexus/content/groups/public/</url>
+		</pluginRepository>
+	</pluginRepositories>
+
 	<dependencies>
 		<dependency>
 			<groupId>com.garlicts</groupId>
 			<artifactId>garlicts-core</artifactId>
-			<version>0.0.1</version>
+			<version>0.0.1-SNAPSHOT</version>
 		</dependency>
-<!-- 		<dependency> -->
-<!-- 			<groupId>com.garlicts.plugin</groupId> -->
-<!-- 			<artifactId>garlicts-distributed</artifactId> -->
-<!-- 			<version>0.0.1</version> -->
-<!-- 		</dependency> -->
 		<dependency>
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
@@ -35,7 +75,7 @@
 			<artifactId>javax.servlet-api</artifactId>
 			<version>3.0.1</version>
 			<scope>provided</scope>
-		</dependency>		
+		</dependency>
 	</dependencies>
 
 	<build>
