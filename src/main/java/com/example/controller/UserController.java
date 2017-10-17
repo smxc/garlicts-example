@@ -8,6 +8,8 @@ import redis.clients.jedis.Jedis;
 
 import com.example.entity.Pager;
 import com.example.entity.User;
+import com.example.service.UserService;
+import com.garlicts.framework.distributed.redis.JedisTemplate;
 //import com.example.service.UserService;
 import com.garlicts.framework.ioc.annotation.Autowired;
 import com.garlicts.framework.mvc.GarlictsContext;
@@ -15,31 +17,29 @@ import com.garlicts.framework.mvc.annotation.Controller;
 import com.garlicts.framework.mvc.annotation.RequestMapping;
 import com.garlicts.framework.mvc.bean.JsonView;
 import com.garlicts.framework.mvc.bean.JspView;
-import com.garlicts.framework.plugin.cache.redis.JedisTemplate;
 
 @Controller
 public class UserController {
 
-//	@Autowired
-//	UserService userService;
+	@Autowired
+	UserService userService;
 //	@Autowired
 //	RedisTemplate redisTemplate;
 	
-//	@RequestMapping(value="/userList")
-//	public JspView getUserList(){
-//		
-//		JspView jspView = new JspView();
-//		Map<String,Object> map = new HashMap<String,Object>();
-//		
-//		List<User> userList = userService.getUserList();
-//		
-//		map.put("list", userList);
-//		jspView.setModel(map);
-//		jspView.setView("userList.jsp");
-//		System.out.println(userList);
-//		
-//		return jspView;
-//	}
+	@RequestMapping(value="/userList")
+	public JspView getUserList(){
+		
+		JspView jspView = new JspView();
+		Map<String,Object> map = new HashMap<String,Object>();
+		
+		List<User> userList = userService.getUserList();
+		
+		map.put("list", userList);
+		jspView.setModel(map);
+		jspView.setView("userList.jsp");
+		
+		return jspView;
+	}
 	
 //	@RequestMapping(value="/userListJson")
 //	public JsonView userListJson(){

@@ -6,6 +6,13 @@ public class User {
 	private String name;
 	private String mobile;
 	
+	public User(String id, String name, String mobile) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.mobile = mobile;
+	}
+	
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", mobile=" + mobile + "]";
